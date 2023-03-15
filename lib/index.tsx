@@ -1,6 +1,10 @@
-import Button from './button';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Icon from './Icon'
 
-const a = 1
-console.log('hi')
+ReactDOM.render(<div>
+    <Icon name="add"></Icon>
+    <Icon name="close"></Icon>
+    <Icon name="location"></Icon>
 
-export {Button, a};
+</div>, document.querySelector('#root'))
