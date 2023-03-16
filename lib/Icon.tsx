@@ -1,13 +1,14 @@
 import React, { SVGAttributes } from "react";
 import './importIcons';
 import './icon.scss';
+import mergeClassName from "./tools/mergeClassName";
 
 interface IconProps extends SVGAttributes<SVGElement> {
     name: string;
 }
-const Icon: React.FunctionComponent<IconProps> = (props) => {
-    return <svg className="koala-icon" aria-hidden="true" {...props}>
-        <use xlinkHref={`#${props.name}`} />
+const Icon: React.FunctionComponent<IconProps> = ({ className, name, ...restProps }) => {
+    return <svg className={mergeClassName('koala-icon', className)} aria-hidden="true" {...restProps}>
+        <use xlinkHref={`#${name}`} />
     </svg>
 
 }

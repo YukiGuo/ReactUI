@@ -6,8 +6,8 @@ const fn: React.MouseEventHandler<Element> = (e) => {
     console.log((e.target as SVGUseElement).href)
 }
 ReactDOM.render(<div>
-    <Icon name="add" onClick={fn}></Icon>
-    <Icon name="close"></Icon>
+    <Icon name="add" className='icon1' onClick={fn}></Icon>
+    <Icon name="close" className='icon2'></Icon>
     <Icon name="location"></Icon>
 
 </div>, document.querySelector('#root'))
