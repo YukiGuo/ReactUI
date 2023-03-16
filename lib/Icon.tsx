@@ -1,13 +1,12 @@
-import React from "react";
+import React, { SVGAttributes } from "react";
 import './importIcons';
 import './icon.scss';
 
-interface IconProps {
+interface IconProps extends SVGAttributes<SVGElement> {
     name: string;
-    onClick?: React.MouseEventHandler<SVGElement>
 }
 const Icon: React.FunctionComponent<IconProps> = (props) => {
-    return <svg className="koala-icon" aria-hidden="true" onClick={props.onClick}>
+    return <svg className="koala-icon" aria-hidden="true" {...props}>
         <use xlinkHref={`#${props.name}`} />
     </svg>
 
