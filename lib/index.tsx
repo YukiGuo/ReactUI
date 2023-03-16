@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Icon from './Icon'
+import Icon from './icon/Icon'
 const fn: React.MouseEventHandler<Element> = (e) => {
     console.log(e.target)
     console.log((e.target as SVGUseElement).href)
