@@ -61,3 +61,13 @@ typings/
 
 # next.js build output
 .next
+
+# Docs templates
+scripts/previewEditor/index.html
+components/version/version.ts
+components/version/version.tsx
+components/version/token.json
+components/version/token-meta.json
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production
