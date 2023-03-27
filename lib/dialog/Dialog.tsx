@@ -1,30 +1,26 @@
 import { Icon } from "../index";
 import Mask from "./Mask";
-import React, { MouseEventHandler, ReactNode } from "react";
+import React, { MouseEventHandler, ReactNode, useEffect, useLayoutEffect } from "react";
 import "./style/dialog.scss";
 import ReactDOM from "react-dom";
-interface DialogProps {
+interface DialogProps extends ModalProps {
   visible: boolean;
-  title: string;
+}
+interface ModalProps  extends ConfirmProps{
   footer?: ReactNode;
-  onCancel?: MouseEventHandler;
-  onOk?: MouseEventHandler;
 }
 interface ConfirmProps {
   title: string;
   onCancel?: MouseEventHandler;
   onOk?: MouseEventHandler;
   content?:ReactNode;
-}
-interface ModalProps {
-  title: string;
-  onCancel?: MouseEventHandler;
-  onOk?: MouseEventHandler;
-  footer?: ReactNode;
+  okText?:ReactNode;
+  cancelText?:ReactNode;
+  width?:string;
+  maskClosable?:boolean
 }
 const Dialog: React.FunctionComponent<DialogProps> = (props) => {
-  const { title, footer, onCancel, onOk ,children} = props;
-
+  const { visible,title, footer, onCancel, onOk ,children,okText,cancelText,width,maskClosable=true} = props;
   const close = (e: React.MouseEvent<Element, MouseEvent>) => {
     if (onCancel) {
       onCancel(e);
@@ -35,10 +31,30 @@ const Dialog: React.FunctionComponent<DialogProps> = (props) => {
       onOk(e);
     }
   };
+  const onClickMask =(e: React.MouseEvent<Element, MouseEvent>)=>{
+    if(maskClosable){
+      if (onCancel) {
+        onCancel(e);
+      }
+     
+    }
+  }
+  useLayoutEffect(()=>{
+    //打卡对话框时页面不滚动
+    if(visible){
+      document.body.style.overflowY='hidden';
+      console.log('hidden')
+
+    }else{
+      document.body.style.overflowY='auto';
+      console.log('auto')
+    }
+  },[visible])
+
   const dialog = (
     <>
-      <Mask />
-      <div className="koala-dialog">
+      <Mask  onClick={onClickMask}/>
+      <div className="koala-dialog" style={{width}} >
         <div className="koala-dialog-header">
           <span className="koala-dialog-header-title">{title}</span>
           <Icon
@@ -56,10 +72,10 @@ const Dialog: React.FunctionComponent<DialogProps> = (props) => {
           ) : (
             <>
               <button className="canclebutton" onClick={close}>
-                取消
+               {cancelText ||'取消'}
               </button>
               <button className="okbutton" onClick={ok}>
-                确认
+                {okText ||'确认'}
               </button>
             </>
           )}
@@ -67,7 +83,7 @@ const Dialog: React.FunctionComponent<DialogProps> = (props) => {
       </div>
     </>
   );
-  return ReactDOM.createPortal(dialog, document.body);
+  return  visible?  ReactDOM.createPortal(dialog, document.body):<></>;
 };
 
 const modal = (props:ModalProps) => {
@@ -83,6 +99,8 @@ const modal = (props:ModalProps) => {
     ReactDOM.unmountComponentAtNode(div);
     div.remove();
     onCancel &&onCancel(e)
+    document.body.style.overflowY='auto';
+
   };
 
   const component = (
