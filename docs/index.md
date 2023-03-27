@@ -1,4 +1,4 @@
-import React from 'react';
+<!-- import React from 'react';
 import Icon from '../lib/icon/Icon';
 const fn: React.MouseEventHandler<Element> = (e) => {
     console.log(e.target)
@@ -11,4 +11,4 @@ const IconExample: React.FunctionComponent = () => {
         </div>
     )
 }
-export default IconExample;
+export default IconExample; -->
