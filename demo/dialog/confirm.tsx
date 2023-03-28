@@ -1,6 +1,5 @@
 import React from 'react';
-import {confirm} from '../../lib/dialog/Dialog';
-
+import {confirm,Button} from '../../lib/index'
 const Confirm: React.FunctionComponent = () => {
     const fn =()=>{
         confirm({
@@ -10,7 +9,7 @@ const Confirm: React.FunctionComponent = () => {
     }
     return (
         <>
-        <button onClick={fn}> confirm</button>
+        <Button onClick={fn} type="primary"> confirm</Button>
         <p>利用 confirm 方法</p>
         </>
     )

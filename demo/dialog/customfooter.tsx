@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Dialog from '../../lib/dialog/Dialog';
+import {Dialog,Button} from '../../lib/index';
 
 const Customfooter: React.FunctionComponent = () => {
     const [visible ,setVisible] =useState<boolean>(false)
@@ -20,7 +20,7 @@ const Customfooter: React.FunctionComponent = () => {
    }
     return (
         <div>
-            <button onClick={openDialog}> 定制footer</button>
+            <Button onClick={openDialog} type="primary"> 定制footer</Button>
             <p>自定义底部</p>
              <Dialog visible={visible} title="提示"  footer={[
                  <button className="canclebutton" onClick={onCancel}>

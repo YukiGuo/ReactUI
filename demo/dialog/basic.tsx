@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Dialog from '../../lib/dialog/Dialog';
+import {Dialog,Button} from '../../lib/index';
 
 const Alert: React.FunctionComponent = () => {
     const [visible ,setVisible] =useState<boolean>(false)
@@ -16,7 +16,8 @@ const Alert: React.FunctionComponent = () => {
    }
     return (
         <div>
-            <button onClick={openDialog}> 打开对话框</button>
+            <Button onClick={openDialog} type="primary"> 打开对话框</Button>
+
             <p>基础对话框</p>
              <Dialog visible={visible} title="提示" onCancel ={onCancel} onOk ={onOk}>
             <p>这是第一段话</p>

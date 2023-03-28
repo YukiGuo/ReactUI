@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Dialog from '../../lib/dialog/Dialog';
+import {Dialog,Button} from '../../lib/index';
 
 const Mask: React.FunctionComponent = () => {
     const [visible ,setVisible] =useState<boolean>(false)
@@ -14,7 +14,7 @@ const Mask: React.FunctionComponent = () => {
    }
     return (
         <div>
-            <button onClick={openDialog}> 打开对话框</button>
+            <Button onClick={openDialog} type="primary"> 打开对话框</Button>
             <p>点击蒙层是不允许许关闭	</p>
              <Dialog visible={visible} title="提示" onCancel ={onCancel} onOk ={onOk} maskClosable={false}>
             <p>这是第一段话</p>
