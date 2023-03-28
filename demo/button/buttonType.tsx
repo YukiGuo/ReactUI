@@ -4,7 +4,7 @@ const ButtonType: React.FunctionComponent = () => {
     const Span = <span style={{ width: '16px', display: "inline-block" }}></span>
     return (
         <div>
-            <Button >default </Button>
+            <Button  >default </Button>
             {Span}
             <Button type="primary">primary </Button>
             {Span}

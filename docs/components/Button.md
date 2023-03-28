@@ -19,3 +19,4 @@ demo:
 
 <!-- prettier-ignore -->
 <code src="../../demo/button/buttonType"></code>
+<code src="../../demo/button/buttonSize"></code>
