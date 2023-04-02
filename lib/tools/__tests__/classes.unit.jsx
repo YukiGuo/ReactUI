@@ -1,4 +1,4 @@
-import mergeClassName from '../mergeClassName'
+import mergeClassName, { classes } from '../classes'
 
 describe('mergeClassName', () => {
     it('接受 1 个className', () => {
@@ -21,4 +21,15 @@ describe('mergeClassName', () => {
         const result = mergeClassName()
         expect(result).toEqual('')
     })
+})
+describe('classes', () => {
+    it('接受字符串', () => {
+        const fn =classes('koala-tree')
+        expect(fn('')).toEqual('koala-tree');
+        expect(fn('ddd')).toEqual('koala-tree-ddd');
+        expect(fn({red:'true',green:true, yellow:true})).toEqual('koala-tree-red koala-tree-green koala-tree-yellow');
+        expect(fn({red:'true',green:false, yellow:true})).toEqual('koala-tree-red koala-tree-yellow');
+        expect(fn({red:'true',green:false, yellow:true},{extra:'heelo'})).toEqual('koala-tree-red koala-tree-yellow heelo');
+    })
+
 })

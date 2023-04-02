@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="0" errors="0" time="9.448">
-  <testsuite name="button" errors="0" failures="0" skipped="0" timestamp="2023-03-19T03:44:18" time="2.603" tests="1">
-    <testcase classname="button 是个 div" name="button 是个 div" time="0.026">
-    </testcase>
-  </testsuite>
-  <testsuite name="我的第一个测试用例" errors="0" failures="0" skipped="0" timestamp="2023-03-19T03:44:18" time="2.509" tests="1">
-    <testcase classname="我的第一个测试用例 add(1,2) 等于3" name="我的第一个测试用例 add(1,2) 等于3" time="0.021">
-    </testcase>
-  </testsuite>
-  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2023-03-19T03:44:18" time="2.904" tests="1">
-    <testcase classname="icon 是个 svg" name="icon 是个 svg" time="0.062">
-    </testcase>
-  </testsuite>
-  <testsuite name="mergeClassName" errors="0" failures="0" skipped="0" timestamp="2023-03-19T03:44:21" time="0.619" tests="5">
+<testsuites name="jest tests" tests="7" failures="0" errors="0" time="3.787">
+  <testsuite name="mergeClassName" errors="0" failures="0" skipped="0" timestamp="2023-04-02T14:32:32" time="3.003" tests="6">
     <testcase classname="mergeClassName 接受 1 个className" name="mergeClassName 接受 1 个className" time="0.003">
     </testcase>
     <testcase classname="mergeClassName 接受 2 个className" name="mergeClassName 接受 2 个className" time="0">
     </testcase>
-    <testcase classname="mergeClassName 接受 2 个className其中有一个是undefined" name="mergeClassName 接受 2 个className其中有一个是undefined" time="0">
+    <testcase classname="mergeClassName 接受 2 个className其中有一个是undefined" name="mergeClassName 接受 2 个className其中有一个是undefined" time="0.001">
     </testcase>
-    <testcase classname="mergeClassName 接受多个空值" name="mergeClassName 接受多个空值" time="0.001">
+    <testcase classname="mergeClassName 接受多个空值" name="mergeClassName 接受多个空值" time="0">
     </testcase>
     <testcase classname="mergeClassName 什么都不传" name="mergeClassName 什么都不传" time="0">
+    </testcase>
+    <testcase classname="classes 接受字符串" name="classes 接受字符串" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2023-04-02T14:32:35" time="0.099" tests="1">
+    <testcase classname="icon 是个 svg" name="icon 是个 svg" time="0.009">
     </testcase>
   </testsuite>
 </testsuites>

@@ -1,6 +1,6 @@
 import { Icon } from "../index";
 import Mask from "./Mask";
-import React, { MouseEventHandler, ReactNode, useEffect, useLayoutEffect } from "react";
+import React, { MouseEventHandler, ReactNode, useLayoutEffect } from "react";
 import "./style/dialog.scss";
 import ReactDOM from "react-dom";
 interface DialogProps extends ModalProps {

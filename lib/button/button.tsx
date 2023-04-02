@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from "react";
 import './button.scss';
-import mergeClassName from "../tools/mergeClassName";
+import mergeClassName from "../tools/classes";
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     type?: 'default' | 'primary' | 'text'|'success'|'warning';
