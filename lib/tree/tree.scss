@@ -1,0 +1,22 @@
+.koala-tree{
+    &-item{
+        &-content{
+            padding: 4px 0;
+            font-size: 14px;
+            &-indent{
+                display: inline-block;
+                
+            }
+        }
+        &-children{
+           height: auto;
+           transition: height 3s ease-out;
+        }  
+        &-collapse{
+            overflow: hidden;
+            .koala-tree-item-children{
+                height: 0;
+            }  
+        }  
+    }
+}

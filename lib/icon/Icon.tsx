@@ -1,5 +1,5 @@
 import React, { SVGAttributes } from "react";
-import './importIcons';
+import './importIcons.js';
 import './icon.scss';
 import mergeClassName from "../tools/classes";
 
