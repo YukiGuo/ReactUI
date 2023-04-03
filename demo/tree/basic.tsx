@@ -9,19 +9,32 @@ const Basic: React.FunctionComponent = () => {
   const [treeData, setTreeData] = useState([
     {
       label: '北京',
-      value: 'beijing',
+      value: '1',
     },
     {
       label: '上海',
-      value: 'shanghai',
+      value: '2',
       children: [
         {
           label: '闵行',
-          value: 'minhang',
+          value: '2-1',
+          children: [{
+            label: '',
+            value: '2-1-1',
+          },
+          {
+            label: '',
+            value: '2-1-3',
+          },
+          {
+            label: '',
+            value: '2-1-3',
+          }
+          ]
         },
         {
           label: '浦东',
-          value: 'pudong',
+          value: '2-2',
         },
       ],
     },

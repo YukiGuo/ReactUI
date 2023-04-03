@@ -27,13 +27,34 @@ const TreeItem: React.FC<treeItemProps> = (props) => {
     }
     return item.value === treeProps.value;
   };
+  const getChildrenValue = (item: ItemProps, arr: string[] = []) => {
+    if (item.children && item.children.length > 0) {
+      item.children.forEach(
+        ele => {
+          arr.push(ele.value)
+          getChildrenValue(ele, arr);
+        }
+      )
+    }
+  }
   const onChange = (item: ItemProps, checked: boolean) => {
     if (treeProps.multiple) {
       const values = (treeProps.value as string[]) || [];
+      const a: string[] = [item.value];
+      getChildrenValue(item, a);
       if (checked) {
-        treeProps.onChange([...values, item.value]);
+        if (treeProps.autoSelectChildren) {
+          treeProps.onChange(Array.from(new Set([...values, ...a])));
+        } else {
+          treeProps.onChange(Array.from(new Set([...values, item.value])));
+        }
+
       } else {
-        treeProps.onChange(values.filter((value) => value !== item.value));
+        if (treeProps.autoSelectChildren) {
+          treeProps.onChange(values.filter((value) => !a.includes(value)));
+        } else {
+          treeProps.onChange(values.filter((value) => value !== item.value));
+        }
       }
     } else {
       const value = checked ? item.value : '';
@@ -43,21 +64,21 @@ const TreeItem: React.FC<treeItemProps> = (props) => {
   return (
     <div className={className({ '': true, collapse: !open })} key={item.value}>
       <div className={className('content')}>
-        {item.children && item.children.length ? (
-          open ? (
-            <span onClick={collapse}>
-              {/* <Icon name="close"></Icon> */}
-              --
-            </span>
-          ) : (
-            <span onClick={expand}> --</span>
-          )
-        ) : null}
-
         <span
           className={className('indent')}
           style={{ width: `${24 * level}px` }}
         ></span>
+        {item.children && item.children.length ? (
+          open ? (
+            <span onClick={collapse} className={className('icon')}>
+              {/* <Icon name="close"></Icon> */}
+              -
+            </span>
+          ) : (
+            <span onClick={expand} className={className('icon')}> +</span>
+          )
+        ) : null}
+
         <input
           type="checkbox"
           checked={isChecked(item)}
