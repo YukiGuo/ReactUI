@@ -3,13 +3,16 @@ interface ItemProps {
     value: string,
     children?: ItemProps[],
     label: string,
+    isLeaf?:boolean;
 }
-
+type valueBsicType =number| string;
+type  valueType =valueBsicType | valueBsicType[];
 interface TreeProps {
     treeData: ItemProps[],
-    value?: string | string[],
+    value?: valueType,
     multiple?: boolean,
-    disabled?: boolean,
-    autoSelectChildren?: boolean,
-    onChange: (value: string | string[]) => void
+    checkable?: boolean,
+    autoSelect?: boolean,
+    onChange?: (value: valueType) => void
+    loadData?:(item:ItemProps)=>void;
 }

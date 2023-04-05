@@ -13,7 +13,6 @@ export default mergeClassName;
 const classes = (prefix: string) => (name: string | Param, options?: Options) => {
   const nameObject =
     typeof name === 'string' || !name ? { [name]: name } : name;
-    console.log(nameObject,'nameObject')
   return Object.entries(nameObject)
     .filter((ele) => false !== ele[1])
     .map((ele) => ele[0])

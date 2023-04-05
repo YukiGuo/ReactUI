@@ -40,10 +40,10 @@ const Basic: React.FunctionComponent = () => {
     },
   ]);
   return <div>
-    <p>多选</p>
-    <p>选中值： {value.join(' ')}</p>
+    <p>多选 自动选中子项</p>
+    <p>选中值： {value.join(' /')}</p>
 
-    <Tree treeData={treeData} value={value} onChange={change} multiple checkable  ></Tree>
+    <Tree treeData={treeData} value={value} onChange={change} multiple autoSelectChildren checkable ></Tree>
   </div>
 };
 export default Basic;
