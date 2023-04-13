@@ -2,29 +2,23 @@
   "name": "koala-ui",
   "version": "1.0.0",
   "description": "",
+  "main": "dist/lib/index",
+  "types": "dist/lib/index",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "dumi dev",
+    "build": "dumi build",
+    "prepare": "husky install && dumi setup",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT_NAME=results.xml JEST_JUNIT_OUTPUT_DIR=./test-results/jest jest --config=jest.config.js"
+
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YukiGuo/ReactUI.git"
   },
+  "authors": [],
   "license": "MIT",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "father build",
-    "build:watch": "father dev",
-    "dev": "dumi dev",
-    "docs:build": "dumi build",
-    "doctor": "father doctor",
-    "lint": "npm run lint:es && npm run lint:css",
-    "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
-    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepare": "husky install && dumi setup",
-    "prepublishOnly": "father doctor && npm run build",
-    "start": "npm run dev"
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -33,60 +27,33 @@
   "lint-staged": {
     "*.{md,json}": [
       "prettier --write --no-error-on-unmatched-pattern"
-    ],
-    "*.{css,less}": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --parser=typescript --write"
     ]
   },
-  "dependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-router": "^6.9.0",
-    "react-router-dom": "^6.9.0",
-    "svg-sprite-loader": "^6.0.11"
-  },
   "devDependencies": {
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "dumi": "^2.0.2",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
     "@types/jest": "^24.0.9",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-test-renderer": "^16.8.1",
-    "@umijs/lint": "^4.0.0",
     "babel-jest": "^24.3.1",
     "babel-preset-react-app": "^10.0.1",
     "cross-env": "^5.2.0",
     "css-loader": "2.1.1",
-    "dumi": "^2.0.2",
-    "eslint": "^8.23.0",
-    "father": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^8.0.1",
     "jest": "^24.3.1",
     "jest-junit": "^15.0.0",
-    "lint-staged": "^13.0.3",
     "node-sass": "6.0.1",
-    "prettier": "^2.7.1",
-    "prettier-plugin-organize-imports": "^3.0.0",
-    "prettier-plugin-packagejson": "^2.2.18",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "react-test-renderer": "^16.8.4",
     "sass-loader": "6.0.7",
     "style-loader": "0.23.1",
-    "stylelint": "^14.9.1",
     "ts-jest": "^24.0.0",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.2",
@@ -94,12 +61,11 @@
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1"
   },
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "authors": []
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-router": "^6.9.0",
+    "react-router-dom": "^6.9.0",
+    "svg-sprite-loader": "^6.0.11"
+  }
 }

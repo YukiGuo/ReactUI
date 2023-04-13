@@ -1,17 +1,6 @@
 # koala-ui
 
-[![NPM version](https://img.shields.io/npm/v/koala-ui.svg?style=flat)](https://npmjs.org/package/koala-ui)
-[![NPM downloads](http://img.shields.io/npm/dm/koala-ui.svg?style=flat)](https://npmjs.org/package/koala-ui)
-
-A react library developed with dumi
-
-## Usage
-
-TODO
-
-## Options
-
-TODO
+A static site base on [dumi](https://d.umijs.org).
 
 ## Development
 
@@ -19,20 +8,11 @@ TODO
 # install dependencies
 $ yarn install
 
-# develop library by docs demo
+# start dev server
 $ yarn start
 
-# build library source code
-$ yarn run build
-
-# build library source code in watch mode
-$ yarn run build:watch
-
 # build docs
-$ yarn run docs:build
-
-# check your project for potential problems
-$ yarn run doctor
+$ yarn run build
 ```
 
 ## LICENSE
