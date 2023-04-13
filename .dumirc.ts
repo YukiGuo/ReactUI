@@ -7,8 +7,6 @@ export default defineConfig({
     name: 'koala-ui',
   },
   resolve: {
-    // docDirs: [{ type: 'doc', dir: 'docs' }],
-    // atomDirs: [{ type: 'component', dir: 'components' }],
     codeBlockMode: 'passive',
   },
   base: process.env.NODE_ENV === 'production' ? `/${repo}/` : '/',

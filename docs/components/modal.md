@@ -1,4 +1,5 @@
 ---
+order: 20
 subtitle: 对话框
 title: Modal
 demo:
